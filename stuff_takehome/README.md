@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Ticketing System Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    Create Left Panel
+        Left panel contains tickets that are assigned to user
+        Black ticket is the one the user is currently working on
+        Ticket with red dot is the ticket that has a new message
+        Ticket with a yellow dot is the one you snoozed
+        
+        Ticket: {
+            _id: ”​5cdb6454107a752e479349f9”, 
+            Title: ”New Task”,
+            Assignee: ”Razan Kiwan”,
+            Status: ”New”,
+            Goal: ”Buy a product” 
+            }
 
-## Available Scripts
+    Gray Panel (Classify Panel)
+        User has to give a name to that ticket from the provided text field
+        Text field has to have character counter beneath it
+        The number of maximum characters is 25
+        While typing in text field character counter will start going down by the current text length
+        If counter is less that 0, view it as a negative number with red color
+        If counter is less than 0 disable proceed button
+        Proceed button will be enabled just if there is a selected GOAL from list and text inside the input
+        Title and goal fields have to be stored in the relevant object attributes 
 
-In the project directory, you can run:
 
-### `yarn start`
+    White Panel
+        Disable conversation box at first
+        Only enable conversation box after saving the GOAL and TITLE of the ticket
+        when you press on the enabled conversation box, englarge to appropriate size
+        Clicking send should remove the text from conversation input
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    Goals list should have following options
+        Buy a product
+        Cancel an account
+        Buy and Recommend a gift
+        Ask for the business
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
