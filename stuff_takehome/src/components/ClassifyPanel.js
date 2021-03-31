@@ -1,7 +1,10 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+
+import clockLogo from "../assets/clock.png";
+import mailLogo from "../assets/mail.png";
 
 export default function ClassifyPanel(props) {
-
+  const [ticket, setTicket] = useState({});
 
   const defaultGoals = [
     "Select",
@@ -12,68 +15,78 @@ export default function ClassifyPanel(props) {
   ];
 
   const handleSelection = (event) => {
-    // props.location.state.setTickets(event.target.value)
-    console.log(event.target.value)
-    // console.log(props.location.pathname)
+    props.goalChange(event.target.value);
 
-    props.goalChange(event.target.value, props.location.state._id)
-    console.log(props)
-    console.log(props.location.state._id, "chosen")
-    
+    console.log(event.target.value);
+  };
 
+  const manageTaskName = (event) => {};
 
-    
-  }
+  useEffect(() => {
+    props.goalChange("Select");
+    const foundTicket = props.tickets.find((ticket) => {
+      return ticket._id === props.match.params.id;
+    });
 
-  const manageTaskName = (event) => {
-
-  }
-
-  
-
-  // useEffect(() => {
-  //   setSelectedGoal("Select")
-  // },[])
-
-  // useEffect(() => {
-  //   return () => {
-  //     setSelectedGoal("Selected")
-  //   }
-  // })
+    setTicket(foundTicket);
+    console.log(foundTicket);
+  }, [props.match.params.id]);
 
   return (
+    <div className="tempWrapper">
+      <div className="classifyPanelContainer">
+        <div className="classifyContentPanel">
+          <div className="classifyHeading">
+            <h1>Classify</h1>
+          </div>
 
-    <div>
-      <div className="classifyPanel">
-        <h1>Classify</h1>
+          <div className="classifyInput">
+            <p className="goalPickerPrompt">What's the user asking for</p>
 
-        <p>Whats the user asking for</p>
+            <select
+              // onClick={handleSelection}
+              onChange={handleSelection}
+              value={props.selectedGoal}
+              className="dropDownMenu"
+            >
+              {defaultGoals.map((goal, index) => {
+                return <option key={index}>{goal}</option>;
+              })}
+            </select>
 
-        <select 
-          // onClick={handleSelection} 
-          onChange={handleSelection}>
-            {defaultGoals.map((goal, index) => {
-                return (
-                    <option key={index} value={goal}>{goal}</option>
-                  
-                )
-            })}
-        </select>
+            <p className="taskEntryPrompt">Task name as shown to the user</p>
+            <input placeholder="Enter Task Name" className="taskNameEntry" />
+            <p className="characterCounter">(Characters Left: 25)</p>
+          </div>
 
-        <p>Task name as shown to the user</p>
-        <input placeholder="Enter Task Name" />
+          <button className="proceedButton">Proceed</button>
+        </div>
       </div>
 
-      <div className="messagePanel">
-        <h1>{props.location.state.Title}</h1>
+      <div className="messageContainer">
+        <div className="messagePanelHead">
+          <div className="ticketHeading">
+            <h1>{ticket.Title}</h1>
+          </div>
 
-        <input 
-          placeholder="Type A Message"
-          onChange={manageTaskName}
+          <div className="headingAssetContainer">
+            <p>0:00</p>
+            <div className="iconContainer">
+              <img src={clockLogo} className="icon clock" />
+              <img src={mailLogo} className="icon mail" />
+            </div>
+          </div>
+        </div>
+        <div className="firstMessage round">
+          <p>I'd like to do something, (first message in a task)</p>
+        </div>
+
+          <input
+            placeholder="Type a message"
+            onChange={manageTaskName}
+            className="messageInput"
           />
       </div>
     </div>
-
-
   );
 }

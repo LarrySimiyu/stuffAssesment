@@ -1,0 +1,197 @@
+$mainColor: #f7f7f7;
+$secondaryColor: #33ccff;
+$backgroundColor: #ffffff;
+
+$tclr: red;
+
+$selectedColor: #000000;
+
+.appContainer {
+  text-align: center;
+  border: 1px solid $tclr;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 700px;
+  padding-bottom: 2px;
+  margin-top: 30px;
+}
+
+.taskPanel {
+  // display: none;
+  border: 1px solid $secondaryColor;
+  width: 4%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.tempWrapper {
+  border: 1px solid yellow;
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+}
+
+.classifyPanelContainer {
+  border: 1px solid green;
+  width: 37%;
+  display: flex;
+  justify-content: flex-start;
+  background-color: $mainColor;
+}
+
+.classifyContentPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 25px;
+  width: 100%;
+}
+
+.proceedButton {
+  display: flex;
+  justify-content: center;
+  width: 27%;
+  margin-top: 425px;
+  margin-left: 290px;
+  color: white;
+  padding: 5px 5px;
+  background-color: $secondaryColor;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.classifyHeading {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 12px;
+  color: $secondaryColor;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.classifyInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  // justify-content: flex-start;
+}
+
+.goalPickerPrompt {
+  display: flex;
+  justify-content: flex-start;
+  color: gray;
+  font-size: 12px;
+}
+
+.taskEntryPrompt {
+  display: flex;
+  justify-content: flex-start;
+  color: gray;
+  font-size: 12px;
+}
+
+.characterCounter {
+  display: flex;
+  justify-content: flex-start;
+  color: gray;
+  font-size: 12px;
+}
+
+.dropDownMenu {
+  width: 35%;
+  border: none;
+  background-color: $mainColor;
+}
+
+.taskNameEntry {
+  width: 75%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: $mainColor;
+  padding: 6px;
+}
+
+.messageContainer {
+  border: 1px solid red;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+
+.messagePanelHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+}
+
+.messageInput {
+  width: 75%;
+  // border-top: 1px solid black;
+  margin-top: 560px;
+  padding-bottom: 3px;
+  border: none;
+
+}
+
+input:focus { 
+  outline: none;
+}
+select:focus{
+  outline: none;
+}
+
+.firstMessage {
+  font-size: 12px;
+  width: 70%;
+  background-color: $mainColor;
+  display: flex;
+  padding-left: 25px;
+}
+
+.round {
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+}
+
+.ticket {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: $selectedColor;
+  margin: 10px 10px;
+}
+
+.ticketHeading {
+  color: gray;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.headingAssetContainer {
+  color: gray;
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+  font-weight: bold;
+}
+
+.icon {
+  max-height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  filter: opacity(0.5) drop-shadow(0 0 0 gray);
+}
+
+.iconContainer {
+  width: 40%;
+}
+
+

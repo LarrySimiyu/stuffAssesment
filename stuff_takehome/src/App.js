@@ -1,16 +1,15 @@
-import "./App.css";
+import "./App.scss";
 
 import React, { useState } from "react";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
 import ClassifyPanel from "./components/ClassifyPanel";
 
 function App() {
   const [tickets, setTickets] = useState([
-
     {
       _id: "5cdb6454107a752e479349f9",
-      Title: "Test 1",
+      Title: "Task 1",
       Assignee: "Razan Kiwan",
       Status: "New",
       Goal: "",
@@ -41,46 +40,46 @@ function App() {
     },
   ]);
 
-  
-
   const [selectedGoal, setSelectedGoal] = useState("Select");
 
-
   const changeHandler = (value, id) => {
-    setSelectedGoal(value)
-
-  }
+    setSelectedGoal(value);
+  };
 
   // map through tickets
   // check for id
   // if there is a match it will change the goal
-  // map returns new array 
-
-
-
+  // map returns new array
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <h1>Tickets</h1>
-        {tickets.map((ticket, index) => {
-          return (
-            <div>
-              <Link to={{ pathname: `/task/${ticket._id}`, state: ticket }}>
-                {ticket.Title}
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+    <div className="appContainer">
+      <BrowserRouter>
+        
 
-      <Route 
+          <div className="taskPanel">
+            {tickets.map((ticket, index) => {
+              return (
+                  <Link to={{ pathname: `/task/${ticket._id}`, state: ticket }}>
+                    <div className="ticket"></div>
+                  </Link>
+              );
+            })}
+          </div>
+          <Switch>
+      {tickets.map((ticket) => {
+        return <Route
         path="/task/:id"
-        render={(props) => <ClassifyPanel {...props} goalChange={changeHandler}  />}
+        render={(props) => (
+          
+          <ClassifyPanel {...props} goalChange={changeHandler} selectedGoal={selectedGoal} tickets={tickets} />
+        )}
+      />
 
-      //  component={ClassifyPanel}
-        />
-    </BrowserRouter>
+      })}
+      </Switch>
+        
+      </BrowserRouter>
+    </div>
   );
 }
 
