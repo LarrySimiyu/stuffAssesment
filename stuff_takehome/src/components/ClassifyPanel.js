@@ -6,6 +6,9 @@ import mailLogo from "../assets/mail.png";
 export default function ClassifyPanel(props) {
   const [ticket, setTicket] = useState({});
 
+  const [userInput, setUserInput] = useState("")
+  const [count, setCount] = useState(25)
+
   const defaultGoals = [
     "Select",
     "Buy a product",
@@ -14,13 +17,34 @@ export default function ClassifyPanel(props) {
     "Ask for the business",
   ];
 
+  const proceed = (event) => {
+    event.preventDefault()
+
+    if(props.selectedGoal !== "Selected" && userInput.length <= 25){
+      event.target.disable = false
+    } else {
+      event.target.disable = true
+    }
+  }
+
   const handleSelection = (event) => {
     props.goalChange(event.target.value);
+    
 
     console.log(event.target.value);
   };
 
-  const manageTaskName = (event) => {};
+  const manageTaskName = event => {
+    // setUserInput(event.target.value)
+    // userInput.length()
+    console.log(event.target.value.length)
+    setCount(25 - event.target.value.length)
+    setUserInput(event.target.value)
+
+    props.ticketNameHandler(userInput, props.index)
+    console.log(userInput)
+  }
+
 
   useEffect(() => {
     props.goalChange("Select");
@@ -43,6 +67,8 @@ export default function ClassifyPanel(props) {
           <div className="classifyInput">
             <p className="goalPickerPrompt">What's the user asking for</p>
 
+
+
             <select
               // onClick={handleSelection}
               onChange={handleSelection}
@@ -54,14 +80,24 @@ export default function ClassifyPanel(props) {
               })}
             </select>
 
-            <p className="taskEntryPrompt">Task name as shown to the user</p>
-            <input placeholder="Enter Task Name" className="taskNameEntry" />
-            <p className="characterCounter">(Characters Left: 25)</p>
+            <p className="taskEntryPrompt">Ticket name as shown to the user</p>
+            <input placeholder="Enter Ticket Name" className="taskNameEntry" onChange={manageTaskName} />
+            <p className="characterCounter">(Characters Left:  
+            
+            
+            <span className={count.length < 25 ? "negativeCount" : ""}>
+            {count}
+              </span>
+              )</p>
           </div>
 
-          <button className="proceedButton">Proceed</button>
+          <button className="proceedButton" onClick={proceed}>Proceed</button>
+
+
         </div>
       </div>
+
+      
 
       <div className="messageContainer">
         <div className="messagePanelHead">
@@ -78,14 +114,21 @@ export default function ClassifyPanel(props) {
           </div>
         </div>
         <div className="firstMessage round">
-          <p>I'd like to do something, (first message in a task)</p>
+          <p>I'd like to do something, (first message in a ticket)</p>
         </div>
+        
+              <div className="subHeading">
+              <span className="subHeadingCircle"></span>
+                <p>Larry Simiyu 11:42 am via [Via Email] </p>
+
+              </div>
 
           <input
             placeholder="Type a message"
             onChange={manageTaskName}
             className="messageInput"
           />
+
       </div>
     </div>
   );

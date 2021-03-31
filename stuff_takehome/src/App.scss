@@ -8,35 +8,35 @@ $selectedColor: #000000;
 
 .appContainer {
   text-align: center;
-  border: 1px solid $tclr;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   height: 700px;
   padding-bottom: 2px;
   margin-top: 30px;
+  border: 1px solid black
+
 }
 
 .taskPanel {
   // display: none;
-  border: 1px solid $secondaryColor;
+  border: 2px solid $secondaryColor;
   width: 4%;
-  height: 700px;
+  height: 98.5%;
   display: flex;
   flex-direction: column;
   padding-left: 4px;
   padding-right: 4px;
+  padding-top: 10px;
 }
 
 .tempWrapper {
-  border: 1px solid yellow;
   display: flex;
   justify-content: flex-start;
   width: 95%;
 }
 
 .classifyPanelContainer {
-  border: 1px solid green;
   width: 37%;
   display: flex;
   justify-content: flex-start;
@@ -62,7 +62,6 @@ $selectedColor: #000000;
   background-color: $secondaryColor;
   border: none;
   border-radius: 5px;
-
 }
 
 .classifyHeading {
@@ -117,8 +116,7 @@ $selectedColor: #000000;
 }
 
 .messageContainer {
-  border: 1px solid red;
-  width: 50%;
+  width: 77%;
   display: flex;
   flex-direction: column;
   padding-left: 30px;
@@ -128,22 +126,22 @@ $selectedColor: #000000;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
   border: none;
 }
 
 .messageInput {
   width: 75%;
   // border-top: 1px solid black;
-  margin-top: 560px;
+  margin-top: 525px;
   padding-bottom: 3px;
   border: none;
-
 }
 
-input:focus { 
+input:focus {
   outline: none;
 }
-select:focus{
+select:focus {
   outline: none;
 }
 
@@ -161,13 +159,45 @@ select:focus{
   -moz-border-radius: 30px;
 }
 
+.roundedImage {
+  background: url(http://placehold.it/50x50);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  overflow: hidden;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  margin: 10px 10px;
+}
+
+.notificaionBadge {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin-left: 24px;
+}
+
 .ticket {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: $selectedColor;
+  background-color: $mainColor;
   margin: 10px 10px;
 }
+
+.active  {
+  .ticket {
+    background-color: $selectedColor;
+
+    
+  }
+}
+
+
 
 .ticketHeading {
   color: gray;
@@ -194,4 +224,42 @@ select:focus{
   width: 40%;
 }
 
+.subHeading {
+  color: gray;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  padding-top: 1px;
+}
 
+.subHeadingCircle {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: $secondaryColor;
+  margin: 10px 10px;
+}
+
+.redDot {
+  background-color: red;
+}
+
+.yellowDot {
+  background-color: #FFA500;
+
+}
+
+.userBadge {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin-left: 24px;
+  background-color: blue;
+
+}
+
+
+.negativeCount {
+  color: red;
+}
