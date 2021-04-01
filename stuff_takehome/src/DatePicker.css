@@ -1,0 +1,78 @@
+
+
+.date {
+    display: none;
+    width: 150px;
+    height: 60px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 2px 2px 10px lightgray;
+    border-radius: 2px;
+    padding: 10px;
+  }
+  
+  .date button {
+    border: none;
+    background-color: white;
+  }
+  
+  .date button:hover {
+    color: lightblue;
+  }
+  .date button:focus {
+    outline: none;
+  }
+  
+  .month,
+  .day {
+    margin-right: 20px;
+  }
+  
+  #month,
+  #year,
+  #day {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+  
+  .upIcon,
+  .downIcon {
+    color: lightgray;
+  }
+  
+  .dateOfBirth {
+    height: 100%;
+    background-color: #f7f7f7;
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5%;
+  }
+  
+  #dateInput {
+    background-color: #f7f7f7;
+    border: 1px solid lightgray;
+    padding: 5px;
+    margin-bottom: 15px;
+    padding-right: 100px;
+    border-radius: 3px;
+  }
+  
+  #dateInput:focus {
+    outline: none;
+  }
+  #title {
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    font-weight: 400;
+  }
+  
+  .border {
+    border: 1px solid lightgray;
+  }
+  

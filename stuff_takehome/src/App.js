@@ -1,4 +1,5 @@
 import "./App.scss";
+import "./DatePicker.css"
 
 import React, { useState } from "react";
 import { BrowserRouter, NavLink, Route, Switch } from "react-router-dom";
@@ -107,6 +108,7 @@ function App() {
           })}
         </Switch>
       </BrowserRouter>
+
     </div>
   );
 }
