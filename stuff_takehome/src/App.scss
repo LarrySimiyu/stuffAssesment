@@ -15,7 +15,6 @@ $selectedColor: #000000;
   padding-bottom: 2px;
   margin-top: 30px;
   border: 1px solid black;
-
 }
 
 .taskPanel {
@@ -94,11 +93,15 @@ $selectedColor: #000000;
   font-size: 12px;
 }
 
-.characterCounter {
+.characterCounterContainer {
   display: flex;
   justify-content: flex-start;
-  color: gray;
+  color: #808080;
   font-size: 12px;
+}
+
+.characterCount {
+  margin-left: 3px;
 }
 
 .dropDownMenu {
@@ -131,11 +134,29 @@ $selectedColor: #000000;
 }
 
 .messageInput {
-  width: 75%;
+  width: 80%;
   // border-top: 1px solid black;
-  margin-top: 525px;
-  padding-bottom: 3px;
+  margin-top: 510px;
+  padding-bottom: 5px;
   border: none;
+  padding-top: 20px;
+  padding-left: 10px;
+  border-radius: 3px;
+}
+
+// .messageSubmitionPoperties {
+//   border: 1px solid red;
+
+// }
+
+.submitButton {
+  width: 10%;
+  background-color: $secondaryColor;
+  color: white;
+  border: none;
+  padding-top: 19px;
+  border-radius: 5px;
+  padding-bottom: 19px;
 }
 
 input:focus {
@@ -189,15 +210,11 @@ select:focus {
   margin: 10px 10px;
 }
 
-.active  {
+.active {
   .ticket {
     background-color: $selectedColor;
-
-    
   }
 }
-
-
 
 .ticketHeading {
   color: gray;
@@ -245,8 +262,7 @@ select:focus {
 }
 
 .yellowDot {
-  background-color: #FFA500;
-
+  background-color: #ffa500;
 }
 
 .userBadge {
@@ -256,10 +272,8 @@ select:focus {
   border: 1px solid white;
   margin-left: 24px;
   background-color: blue;
-
 }
 
-
-.negativeCount {
-  color: red;
+.red {
+  color: #fc0000;
 }

@@ -55,7 +55,6 @@ function App() {
 
   const [selectedGoal, setSelectedGoal] = useState("Select");
 
-  const [isActive, setActive] = useState("false");
 
   
 
@@ -63,9 +62,7 @@ function App() {
     setSelectedGoal(value);
   };
 
-  const handleTaskInput = (value, index) => {
-
-  }
+  
 
 
 
@@ -99,7 +96,6 @@ function App() {
                     goalChange={changeHandler}
                     selectedGoal={selectedGoal}
                     tickets={tickets}
-                    ticketNameHandler={handleTaskInput}
                     index={index}
                   />
                 )}

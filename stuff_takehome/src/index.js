@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <DatePicker />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
