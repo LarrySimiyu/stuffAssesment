@@ -50,7 +50,6 @@ export default function ClassifyPanel(props) {
     props.goalChange(event.target.value);
 
     setCurrentSelection(event.target.value);
-    console.log(event.target.value);
 
     if (event.target.value !== "Select" && count < 25) {
       handleButtonChange(true);
@@ -68,7 +67,6 @@ export default function ClassifyPanel(props) {
 
     conditionalRenderColor();
 
-    console.log(count);
 
     if (currentSelection !== "Select" && count < 25) {
       handleButtonChange(true);
@@ -81,13 +79,11 @@ export default function ClassifyPanel(props) {
   const handleMessageInput = (event) => {
     event.preventDefault();
     setMessageInput(event.target.value);
-    console.log(messageInput, "just input");
   };
 
   const handleMessageSubmit = (event) => {
     event.preventDefault();
     setMessageInput("");
-    console.log(messageInput);
   };
 
   useEffect(() => {
@@ -105,7 +101,6 @@ export default function ClassifyPanel(props) {
     });
 
     setTicket(foundTicket);
-    console.log(foundTicket);
   }, [props.match.params.id]);
 
   const conditionalRenderColor = () => {
